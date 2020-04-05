@@ -47,6 +47,7 @@ function previewWatcher(name, event, app)
         end)
     end
 
+    --Disable all VIM hotkeys when Preview application is not focused
     if (name == "Preview" and event == hs.application.watcher.deactivated) then
         
         --Disbale Scroll Left Hotkey
