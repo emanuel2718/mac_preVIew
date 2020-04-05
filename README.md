@@ -1,6 +1,6 @@
 # mac_preVIew
 
-##TODO LIST:
+## TODO LIST:
 - [ ] Add gg, G vim navigation commands (Go to bottom and top of pdf)
 - [ ] CTRL+f, CTRL+b (Scroll to the next page or the previous)
 - [ ] Insert and Normal mode. Use hs.alert.show('Current Mode')
