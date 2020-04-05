@@ -1,6 +1,7 @@
 # mac_preVIew
 
 ## TODO LIST:
+- [ ] Disable all hotkeys when spotlight is beign used.
 - [ ] Add gg, G vim navigation commands (Go to bottom and top of pdf)
 - [ ] CTRL+f, CTRL+b (Scroll to the next page or the previous)
 - [ ] Insert and Normal mode. Use hs.alert.show('Current Mode')
