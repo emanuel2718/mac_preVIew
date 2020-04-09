@@ -71,6 +71,7 @@ For example: `README = 'Adobe Acrobat Reader DC'`
 - [x] CTRL+f, CTRL+b (Scroll to the next page or the previous)
 - [ ] Disable all hotkeys when spotlight is beign used.
 - [ ] Add a list of application that the vim like commands will be used?
+- [ ] Refactor code (Maybe use hs.modal for Normal and Insert modes)
 
 ### Credits:
 This project couldn't have been possible without [Hammerspoon](https://github.com/Hammerspoon/hammerspoon), which is a powerful OSX automation tool.
