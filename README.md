@@ -44,16 +44,18 @@ In order for the VIM navigation keybinds to work; *Preview* app must be
  * `J` : Scroll Down
  * `K` : Scroll Up
  * `L` : Scroll Right
+ * `I` : Enter Insert Mode
+ * `ESC` : Enter Normal Mode
 
 ## TODO LIST:
+- [x] Create documentation on how to install
+- [x] Insert and Normal mode. Use hs.alert.show('Current Mode')
 - [ ] Think about a different name.
 - [ ] Disable all hotkeys when spotlight is beign used.
 - [ ] Add gg, G vim navigation commands (Go to bottom and top of pdf)
 - [ ] CTRL+f, CTRL+b (Scroll to the next page or the previous)
-- [ ] Insert and Normal mode. Use hs.alert.show('Current Mode')
 - [ ] Visual mode. That let's the user highlight something with keyboard
 - [ ] Add a list of application that the vim like commands will be used?
-- [x] Create documentation on how to install
 
 ## Credits:
 This project couldn't have been possible without [Hammerspoon](https://github.com/Hammerspoon/hammerspoon), which is a powerful OSX automation tool.
