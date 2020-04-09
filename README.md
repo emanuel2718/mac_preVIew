@@ -50,25 +50,26 @@ variable to the exact name (case sensitive) of the PDF Reader of your choice.
 For example: `README = 'Adobe Acrobat Reader DC'`
 
 ### Navigation:
- * `H` : Scroll Left
- * `J` : Scroll Down
- * `K` : Scroll Up
- * `L` : Scroll Right
- * `I` : Enter Insert Mode
+ * `h` : Scroll Left
+ * `j` : Scroll Down
+ * `k` : Scroll Up
+ * `l` : Scroll Right
+ * `i` : Enter Insert Mode
 
 
 
  * `ESC` : Enter Normal Mode
- * `G`   : Scroll Top of PDF
- * `Shift + G` : Scroll Bottom of PDF
- * `Ctrl + F` : Scroll to next page
- * `Ctrl + B` : Scroll to previous page
+ * `g`   : Scroll Top of PDF
+ * `SHIFT+g` : Scroll Bottom of PDF
+ * `CTRL+f` : Scroll to next page
+ * `CTRL+b` : Scroll to previous page
 
 ### TODO LIST:
 - [x] Create documentation on how to install
 - [x] Insert and Normal mode.
 - [x] Add gg, G vim navigation commands (Go to bottom and top of pdf)
 - [x] CTRL+f, CTRL+b (Scroll to the next page or the previous)
+- [ ] Add SHIFT+`key` to scroll faster than normal scrolling speed.
 - [ ] Disable all hotkeys when spotlight is beign used.
 - [ ] Add a list of application that the vim like commands will be used?
 - [ ] Refactor code (Maybe use hs.modal for Normal and Insert modes)
