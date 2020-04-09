@@ -8,6 +8,9 @@ function init()
     --Scrolling speed
     SPEED = 2
 
+    --PDF Reader of choice
+    READER = 'Preview'
+
     --Modes
     INSERTMODE = false
     NORMALMODE = true
@@ -19,7 +22,7 @@ end
 
 function previewWatcher(name, event, app)
     --If preview application is beign focused watch for VIM keybinds
-    if (name == "Preview" and event == hs.application.watcher.activated) then
+    if (name == READER and event == hs.application.watcher.activated) then
 
         --Enable Keybind: Enter Normal Mode
         hs.hotkey.bind({}, 'ESCAPE',
@@ -34,7 +37,7 @@ function previewWatcher(name, event, app)
         end,nil, nil)
 
         --Enable Keybind: Enter Insert Mode
-        hs.hotkey.bind({}, "I",
+        hs.hotkey.bind({}, 'I',
         function()
             if NORMALMODE then
             hs.alert.show('INSERT')
@@ -46,7 +49,7 @@ function previewWatcher(name, event, app)
         end,nil, nil)
 
         --Enable Keybind: Scroll Left
-        hs.hotkey.bind({}, "H",
+        hs.hotkey.bind({}, 'H',
         function()
             hs.eventtap.scrollWheel({SPEED, 0}, {})
         end,nil,
@@ -55,7 +58,7 @@ function previewWatcher(name, event, app)
         end)
 
         --Enable Keybind: Scroll Down
-        hs.hotkey.bind({}, "J",
+        hs.hotkey.bind({}, 'J',
         function()
             hs.eventtap.scrollWheel({0, -SPEED}, {})
         end,nil,
@@ -64,7 +67,7 @@ function previewWatcher(name, event, app)
         end)
 
         --Enable Keybind: Scroll Up
-        hs.hotkey.bind({}, "K",
+        hs.hotkey.bind({}, 'K',
         function()
             hs.eventtap.scrollWheel({0, SPEED}, {})
         end,nil,
@@ -73,7 +76,7 @@ function previewWatcher(name, event, app)
         end)
 
         --Enable Keybind: Scroll Right
-        hs.hotkey.bind({}, "L",
+        hs.hotkey.bind({}, 'L',
         function()
             hs.eventtap.scrollWheel({-SPEED, 0}, {})
         end,nil,
@@ -83,7 +86,7 @@ function previewWatcher(name, event, app)
     end
 
     --Disable all VIM keybinds when Preview application is NOT focused
-    if (name == "Preview" and event == hs.application.watcher.deactivated) then
+    if (name == READER and event == hs.application.watcher.deactivated) then
         disableAllKeys()
     end
 end
@@ -92,7 +95,7 @@ function enableAllKeys()
 
 
     --Enable Keybind: Scroll Left
-    hs.hotkey.bind({}, "H",
+    hs.hotkey.bind({}, 'H',
     function()
         hs.eventtap.scrollWheel({SPEED, 0}, {})
     end,nil,
@@ -101,7 +104,7 @@ function enableAllKeys()
     end)
 
     --Enable Keybind: Scroll Down
-    hs.hotkey.bind({}, "J",
+    hs.hotkey.bind({}, 'J',
     function()
         hs.eventtap.scrollWheel({0, -SPEED}, {})
     end,nil,
@@ -110,7 +113,7 @@ function enableAllKeys()
     end)
 
     --Enable Keybind: Scroll Up
-    hs.hotkey.bind({}, "K",
+    hs.hotkey.bind({}, 'K',
     function()
         hs.eventtap.scrollWheel({0, SPEED}, {})
     end,nil,
@@ -119,7 +122,7 @@ function enableAllKeys()
     end)
 
     --Enable Keybind: Scroll Right
-    hs.hotkey.bind({}, "L",
+    hs.hotkey.bind({}, 'L',
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
     end,nil,
@@ -138,14 +141,14 @@ function disableAllKeys()
     end,nil, nil)
 
     --Disable: Insert Mode Keybind
-    hs.hotkey.disableAll({}, "I",
+    hs.hotkey.disableAll({}, 'I',
     function()
         --hs.alert.show('Insert Mode')
         disableScrollingKeys()
     end,nil, nil)
 
     --Disbale: Scroll Left Keybind
-    hs.hotkey.disableAll({}, "H",
+    hs.hotkey.disableAll({}, 'H',
     function()
         hs.eventtap.scrollWheel({SPEED, 0}, {})
     end,nil,
@@ -154,7 +157,7 @@ function disableAllKeys()
     end)
     
     --Disbale: Scroll Down Keybind
-    hs.hotkey.disableAll({}, "J",
+    hs.hotkey.disableAll({}, 'J',
     function()
         hs.eventtap.scrollWheel({0, -SPEED}, {})
     end,nil,
@@ -163,7 +166,7 @@ function disableAllKeys()
     end)
 
     --Disbale: Scroll Up Keybind
-    hs.hotkey.disableAll({}, "K",
+    hs.hotkey.disableAll({}, 'K',
     function()
         hs.eventtap.scrollWheel({0, SPEED}, {})
     end,nil,
@@ -172,7 +175,7 @@ function disableAllKeys()
     end)
 
     --Disbale: Scroll Right Keybind
-    hs.hotkey.disableAll({}, "L",
+    hs.hotkey.disableAll({}, 'L',
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
     end,nil,
@@ -186,7 +189,7 @@ function enableInsertKey()
     --to Insert Mode if we wanted to.
 
     --Enable: Insert Mode Keybind
-    hs.hotkey.bind({}, "I",
+    hs.hotkey.bind({}, 'I',
     function()
         if NORMALMODE then
         hs.alert.show('Insert Mode')
@@ -203,7 +206,7 @@ function disableInsertKey()
     --the letter 'i'.
 
     --Disable: Insert Mode Keybind
-    hs.hotkey.disableAll({}, "I",
+    hs.hotkey.disableAll({}, 'I',
     function()
         if NORMALMODE then
         hs.alert.show('Insert Mode')
@@ -218,7 +221,7 @@ end
 function disableScrollingKeys()
 
     --Disable: Scroll Left Keybind
-    hs.hotkey.disableAll({}, "H",
+    hs.hotkey.disableAll({}, 'H',
     function()
         hs.eventtap.scrollWheel({SPEED, 0}, {})
     end,nil,
@@ -227,7 +230,7 @@ function disableScrollingKeys()
     end)
     
     --Disable: Scroll Down Keybind
-    hs.hotkey.disableAll({}, "J",
+    hs.hotkey.disableAll({}, 'J',
     function()
         hs.eventtap.scrollWheel({0, -SPEED}, {})
     end,nil,
@@ -236,7 +239,7 @@ function disableScrollingKeys()
     end)
 
     --Disable: Scroll Up Keybind
-    hs.hotkey.disableAll({}, "K",
+    hs.hotkey.disableAll({}, 'K',
     function()
         hs.eventtap.scrollWheel({0, SPEED}, {})
     end,nil,
@@ -245,7 +248,7 @@ function disableScrollingKeys()
     end)
 
     --Disable: Scroll Right Keybind
-    hs.hotkey.disableAll({}, "L",
+    hs.hotkey.disableAll({}, 'L',
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
     end,nil,
