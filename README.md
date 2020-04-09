@@ -6,8 +6,10 @@ VIM-like navigation while reading PDF's on macOS Preview app. No need to prefix
 VIM commands with `Ctrl` or `Shift`, just open the Preview app and start navigating
 comfortably through PDF's. Keybinds are only available when Preview is in focus (i.e beign used).
 
+## Preview of preVIew:
+![Alt Text](https://media.giphy.com/media/f67PtLjfiRjDBaoVqS/giphy.gif)
 
-# Installation:
+
 
 ### Step 1: Install Hammerspoon:
 
