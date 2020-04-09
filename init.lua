@@ -24,6 +24,7 @@ function previewWatcher(name, event, app)
     --If preview application is beign focused watch for VIM keybinds
     if (name == READER and event == hs.application.watcher.activated) then
 
+
         --Enable Keybind: Enter Normal Mode
         hs.hotkey.bind({}, 'ESCAPE',
         function()
@@ -83,6 +84,36 @@ function previewWatcher(name, event, app)
         function()
             hs.eventtap.scrollWheel({-SPEED, 0}, {})
         end)
+
+        --Enable Keybind: Move to Bottom of PDF
+        hs.hotkey.bind({'shift'}, 'G',
+        function()
+            hs.eventtap.keyStroke({'cmd'}, 'Down')
+        end)
+
+        --Enable Keybind: Move to Top of PDF
+        hs.hotkey.bind({}, 'G',
+        function()
+            hs.eventtap.keyStroke({'cmd'}, 'Up')
+        end)
+
+        --Enable Keybind: Scrool one page foward
+        hs.hotkey.bind({'ctrl'}, 'F',
+        function()
+            hs.eventtap.keyStroke({}, 'Right')
+        end,nil,
+        function()
+            hs.eventtap.keyStroke({}, 'Right')
+        end)
+
+        --Enable Keybind: Scrool one page backwards
+        hs.hotkey.bind({'ctrl'}, 'B',
+        function()
+            hs.eventtap.keyStroke({}, 'Left')
+        end,nil,
+        function()
+            hs.eventtap.keyStroke({}, 'Left')
+        end)
     end
 
     --Disable all VIM keybinds when Preview application is NOT focused
@@ -128,6 +159,36 @@ function enableAllKeys()
     end,nil,
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
+    end)
+
+    --Enable Keybing: Bottom of PDF
+    hs.hotkey.bind({'shift'}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Down')
+    end)
+
+    --Enable Keybind: Move to Top of PDF
+    hs.hotkey.bind({}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Up')
+    end)
+
+    --Enable Keybind: Scrool one page foward
+    hs.hotkey.bind({'ctrl'}, 'F',
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end)
+
+    --Enable Keybind: Scrool one page backwards
+    hs.hotkey.bind({'ctrl'}, 'B',
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
     end)
 
 end
@@ -181,6 +242,36 @@ function disableAllKeys()
     end,nil,
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
+    end)
+
+    --Disable: Bottom of PDF Keybind
+    hs.hotkey.disableAll({'shift'}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Down')
+    end)
+
+    --Disable: Top of PDF Keybind
+    hs.hotkey.disableAll({}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Up')
+    end)
+
+    --Disable: Scrool one page foward keybind
+    hs.hotkey.disableAll({'ctrl'}, 'F',
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end)
+
+    --Disable: Scrool one page backward keybind
+    hs.hotkey.disableAll({'ctrl'}, 'B',
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
     end)
 end
 
@@ -254,6 +345,36 @@ function disableScrollingKeys()
     end,nil,
     function()
         hs.eventtap.scrollWheel({-SPEED, 0}, {})
+    end)
+
+    --Disable: Bottom of PDF Keybind
+    hs.hotkey.disableAll({'shift'}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Down')
+    end)
+
+    --Disable: Top of PDF Keybind
+    hs.hotkey.disableAll({}, 'G',
+    function()
+        hs.eventtap.keyStroke({'cmd'}, 'Up')
+    end)
+
+    --Disable: Scrool one page foward keybind
+    hs.hotkey.disableAll({'ctrl'}, 'F',
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Right')
+    end)
+
+    --Disable: Scrool one page backward keybind
+    hs.hotkey.disableAll({'ctrl'}, 'B',
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
+    end,nil,
+    function()
+        hs.eventtap.keyStroke({}, 'Left')
     end)
 end
 

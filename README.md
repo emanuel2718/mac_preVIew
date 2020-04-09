@@ -41,7 +41,7 @@ TLDR: `Open` Hammerspoon appllication and press `Shift + Cmd + R`.
 In order for the VIM navigation keybinds to work; *Preview* app must be
 **opened** and in **focus**. 
 
-## Different PDF Reader:
+### Different PDF Reader:
 If you want to use a PDF reader other than Preview:
 
 Open `init.lua` in your editor of choice and change the value of the `READER`
@@ -49,23 +49,30 @@ variable to the exact name (case sensitive) of the PDF Reader of your choice.
 
 For example: `README = 'Adobe Acrobat Reader DC'`
 
-## Navigation:
+### Navigation:
  * `H` : Scroll Left
  * `J` : Scroll Down
  * `K` : Scroll Up
  * `L` : Scroll Right
  * `I` : Enter Insert Mode
- * `ESC` : Enter Normal Mode
 
-## TODO LIST:
+
+
+ * `ESC` : Enter Normal Mode
+ * `G`   : Scroll Top of PDF
+ * `Shift + G` : Scroll Bottom of PDF
+ * `Ctrl + F` : Scroll to next page
+ * `Ctrl + B` : Scroll to previous page
+
+### TODO LIST:
 - [x] Create documentation on how to install
 - [x] Insert and Normal mode.
-- [ ] Add gg, G vim navigation commands (Go to bottom and top of pdf)
-- [ ] CTRL+f, CTRL+b (Scroll to the next page or the previous)
+- [x] Add gg, G vim navigation commands (Go to bottom and top of pdf)
+- [x] CTRL+f, CTRL+b (Scroll to the next page or the previous)
 - [ ] Disable all hotkeys when spotlight is beign used.
 - [ ] Add a list of application that the vim like commands will be used?
 
-## Credits:
+### Credits:
 This project couldn't have been possible without [Hammerspoon](https://github.com/Hammerspoon/hammerspoon), which is a powerful OSX automation tool.
 
 Visit their [Website](http://www.hammerspoon.org/) for more imformation.
