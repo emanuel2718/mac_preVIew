@@ -27,7 +27,7 @@ On a Terminal window:
 
 2. `mkdir ~/.hammerspoon`
 
-3. `ln -s <path-to-mac_preVIew-folder>/hammer-vim/init.lua ~/.hammerspoon/init.lua`
+3. `ln -s <path-to-mac_preVIew-folder>/init.lua ~/.hammerspoon/init.lua`
 
 ### Step 3: Reaload Hammerspoon configuration:
 Open Hammerspoon application either with a Spotlight search or by Right
